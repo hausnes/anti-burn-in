@@ -61,12 +61,19 @@ document.addEventListener('keydown', function(event) {
             tidsintervall = parseInt(nyttIntervall);
             if (!isNaN(tidsintervall) && tidsintervall > 0) {
                 oppstart(tidsintervall);
+                oppdaterTransitionTid(tidsintervall);
             } else {
                 alert("Ugyldig intervall. Ver venleg å skrive inn eit positivt heiltal.");
             }
         }
     }
 });
+
+function oppdaterTransitionTid(tidsintervall) {
+    // Halvparten av tidsintervallet i sekunder
+    let transitionTid = (tidsintervall / 2) / 1000;
+    document.body.style.transition = `background-color ${transitionTid}s ease`;
+}
 
 /*
     Fjernar informasjonsteksten om å endre tidsintervall etter 5 sekund.

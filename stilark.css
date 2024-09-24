@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 1.5s ease; /* https://css-tricks.com/almanac/properties/t/transition/ */
 }
 
 .temp {
